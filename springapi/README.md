@@ -10,7 +10,7 @@ The users are stored in a PostgreSQL database. A `docker-compose.yml` is provide
 
 Copy `.env.example` to `.env` and configure the desired credentials and ports.
 
-Create a database with pgAdmin (https://localhost:9999/), for example, `springdemo`.
+Create a database with pgAdmin (http://localhost:9999/), for example, `springdemo`.
 
 ## Spring Configuration
 
