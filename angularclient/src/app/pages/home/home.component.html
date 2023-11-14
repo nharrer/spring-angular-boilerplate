@@ -1,0 +1,9 @@
+<h1>Greetings</h1>
+
+<div *ngIf="!isAuthenticated">
+	<p>Login to see your greeting</p>
+</div>
+
+<div *ngIf="isAuthenticated">
+	<p>Hello {{username}}, you are logged in.</p>
+</div>

@@ -1,0 +1,14 @@
+# copy this file to application.properties and set your local properties and credentials
+
+# This is the port for the spring boot webserver
+server.port = 8090
+
+# Properties for the database connection.
+spring.datasource.url=jdbc:postgresql://localhost:5432/springdemo
+spring.datasource.username=admin
+spring.datasource.password=admin
+
+# Replace with a random value.
+my.jwt.secret=secret
+# expiration time in ms: 10 days: 10 * 60 * 60 * 1000
+my.jwt.expiration=36000000

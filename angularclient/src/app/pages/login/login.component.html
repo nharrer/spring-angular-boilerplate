@@ -1,0 +1,22 @@
+<form (submit)="login()" class="login-form">
+    <mat-form-field class="login-form-row">
+        <mat-label>E-Mail</mat-label>
+        <input matInput type="text" [(ngModel)]="username" name="username">
+    </mat-form-field>
+
+    <mat-form-field class="login-form-row">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="password" autocomplete="on">
+    </mat-form-field>
+
+    <div>
+        <input id="option-stayloggedin" type="checkbox" [(ngModel)]="remember" name="remember">
+        <label for="option-stayloggedin" style="font-weight: normal">Stay logged in (don't use on public machines).</label>
+    </div>
+
+    <div *ngIf="error" class="login-error">
+        {{error}}
+    </div>
+
+    <button type="submit" mat-raised-button color="primary" class="login-button">Login</button>
+</form>

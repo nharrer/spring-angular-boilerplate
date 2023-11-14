@@ -1,0 +1,27 @@
+<div class="main-container" [class.is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="app-name">{{appConfig.appTitle}}</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container
+        class="sidenav-container"
+        [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+        (backdropClick)="closemenu()">
+        <mat-sidenav #sidenav
+            [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+            (keydown.escape)="closemenu()">
+            <mat-nav-list>
+                <a mat-list-item *ngIf="authService.isLoggedIn" routerLink="/home"><mat-icon matListItemIcon>home</mat-icon>Home</a>
+                <a mat-list-item *ngIf="authService.isLoggedIn" routerLink="/test/1"><mat-icon matListItemIcon>device_thermostat</mat-icon>Test</a>
+                <a mat-list-item *ngIf="!authService.isLoggedIn" routerLink="/login"><mat-icon matListItemIcon>login</mat-icon>Login</a>
+                <a mat-list-item *ngIf="authService.isLoggedIn" href="#" (click)="logout()"><mat-icon matListItemIcon>logout</mat-icon>Logout</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
