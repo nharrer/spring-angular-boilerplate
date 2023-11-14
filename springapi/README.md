@@ -28,4 +28,4 @@ INSERT INTO public.users(id, roles, email, first_name, last_name, password)
 VALUES (1, 'ROLE_USER,ROLE_ADMIN', 'admin@test.com', 'admin', 'admin', '$2a$10$N1f1.eypqJtCsB.tZBqfL.mqsj42ROYgTI2oaMA1Wxv/e9w4F7YZq');
 `
 
-This created a user `admin@test.com` with password `test123`.
+This creates a user `admin@test.com` with password `test123`. Don't forget to change the password later.
